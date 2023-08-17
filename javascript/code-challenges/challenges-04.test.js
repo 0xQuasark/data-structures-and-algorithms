@@ -1,5 +1,13 @@
 'use strict';
 
+
+/*
+the callback should return:
+  a > b: return a number < 0
+  a < b: return a number > 0
+  a === b: 
+*/
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -24,6 +32,7 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   // Solution code here...
+  return arr.map(callback);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +44,7 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,9 +54,21 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
-
 const sortNumbers = (arr) => {
-  // Solution code here...
+  // Use the sort() method to sort the array of numbers
+  // The default behavior of sort() is to sort elements as strings, which can lead to incorrect results for numbers
+  // To sort the numbers correctly, we need to provide a comparison function as an argument to sort()
+  // The comparison function takes two numbers, 'a' and 'b', as input and returns a negative value, zero, or a positive value
+  // If the comparison function returns a negative value, 'a' will be sorted before 'b'
+  // If the comparison function returns zero, the order of 'a' and 'b' remains unchanged
+  // If the comparison function returns a positive value, 'b' will be sorted before 'a'
+  return arr.sort((a, b) => {
+    // To sort the numbers from smallest to largest, we subtract 'b' from 'a'
+    // If 'a' is smaller than 'b', the result will be a negative value, and 'a' will be sorted before 'b'
+    // If 'a' is larger than 'b', the result will be a positive value, and 'b' will be sorted before 'a'
+    // If 'a' and 'b' are equal, the result will be zero, and their order remains unchanged
+    return a - b;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,6 +81,9 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    return b - a;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,6 +98,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,6 +116,9 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    return a.price - b.price;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
