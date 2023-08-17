@@ -12,6 +12,7 @@ Push each updated animal string into the new array. Return the new array.
 HINT: Look at the tests to see how the callback functions are used.
 
 ------------------------------------------------------------------------------------------------ */
+console.log('test4');
 
 function upper(str) {
   return str.toUpperCase();
