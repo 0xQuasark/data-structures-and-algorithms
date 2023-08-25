@@ -29,6 +29,17 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  let max = Number.NEGATIVE_INFINITY;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] > max) {
+        max = matrix[i][j];
+      }
+    }
+  }
+
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,6 +58,15 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let sum = 0;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      sum += matrix[i][j];
+    }
+  }
+
+  return sum;
 };
 
 
@@ -74,7 +94,17 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
+  const totalSales = [];
 
+  for (let i = 0; i < stores[0].length; i++) {
+    let sum = 0;
+    for (let j = 0; j < stores.length; j++) {
+      sum += stores[j][i];
+    }
+    totalSales.push(sum);
+  }
+
+  return totalSales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,6 +119,17 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const formattedData = [];
+
+  hours.forEach((hour, index) => {
+    const obj = {
+      sales: `${data[index]} cookies`,
+      time: hour
+    };
+    formattedData.push(obj);
+  });
+
+  return formattedData;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +155,19 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let treatsQuantity = 0;
+  
+  arr.forEach((errand) => {
+    if (errand.store === 'Pet store') {
+      errand.items.forEach((item) => {
+        if (item.name === 'Treats') {
+          treatsQuantity += item.quantity;
+        }
+      });
+    }
+  });
+  
+  return treatsQuantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
