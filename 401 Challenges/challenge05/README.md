@@ -3,7 +3,7 @@
 // description
 
 ## Whiteboard Process
-- Notability ([direct link to image](https://notability.com/n/0OZm7qFi4EpdclH08EkBBu))
+- Notability ()
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
