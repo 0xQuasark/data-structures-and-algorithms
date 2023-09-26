@@ -1,0 +1,18 @@
+{
+  "name": "challenge06",
+  "version": "1.0.0",
+  "description": "// description",
+  "main": "LinkedList.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "test:watch": "jest --watch",
+    "dev":"nodemon ./LinkedList.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  }
+}
