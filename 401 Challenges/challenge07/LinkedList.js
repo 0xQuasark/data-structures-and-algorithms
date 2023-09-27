@@ -50,19 +50,40 @@ class LinkedList {
     return foundIt;
   }
 
-  toString() {
+  toString(shouldOutput) {
     let string = '';
     let current = this.head;
     while (current) {
-      console.log(current.value);
+      // if (shouldOutput) {console.log(current.value);}
       if (current.value) {
         string += `{ ${current.value} } -> `;
       }
       current = current.next;
     }
     string += `NULL`;
-    console.log(string);
+    if (shouldOutput) {console.log(string);}
     return string;
+  }
+
+  kthFromEnd(k){
+    let current = this.head;
+    let listArray = [];
+
+    if (k < 0) {return 'k cannot be negative';}
+
+    while (current) {
+      if (current.value) {
+        listArray.push(current.value);
+      }
+      current = current.next;
+    }
+    // console.log(`length: ${listArray.length}. k: ${k}. answer: ${listArray[listArray.length - (k+1)]}`);
+
+    if (k > (listArray.length - 1) ) {
+      return 'Out of bounds';
+    }
+
+    return listArray[listArray.length - (k+1)];
   }
 
 }
@@ -95,19 +116,23 @@ function traversal (list) {
   }
 }
 
-survivalRope.append('paddle');
-survivalRope.insert('chicken');
+// survivalRope.append('paddle');
+// survivalRope.insert('chicken');
 // console.log(survivalRope.includes('sunscreen'));
 // console.log(survivalRope.toString());
 
-traversal(survivalRope);
+// traversal(survivalRope);
 
-let linkedList = new LinkedList('first');
-// linkedList.append('second');
-linkedList.insert('first');
-linkedList.insert('second');
-linkedList.insert('third');
-linkedList.toString();
+// let linkedList = new LinkedList('first');
+// // linkedList.append('second');
+// linkedList.insert('2');
+// linkedList.insert('8');
+// linkedList.insert('3');
+// linkedList.insert('1');
+
+// linkedList.kthFromEnd(3);
+
+// linkedList.toString();
 
 
 module.exports = LinkedList;
