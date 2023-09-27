@@ -54,5 +54,55 @@ describe('Testing the Linked List class', () => {
     expect(allValues).toBe('{ third } -> { second } -> { first } -> NULL');
   });
 
-  
+  test('Where k is greater than the length of the linked list', () => {
+    let linkedList = new LinkedList();
+    linkedList.insert('first');
+    linkedList.insert('second');
+    linkedList.insert('third');
+
+    let kthElement = linkedList.kthFromEnd(6);
+    expect(kthElement).toBe('Out of bounds');
+  });
+
+  test('Where k and the length of the list are the same', () => {
+    let linkedList = new LinkedList();
+    linkedList.insert('first');
+    linkedList.insert('second');
+    linkedList.insert('third');
+
+    let kthElement = linkedList.kthFromEnd(3);
+    expect(kthElement).toBe('Out of bounds');
+  });
+
+  test('Where k is not a positive integer', () => {
+    let linkedList = new LinkedList();
+    linkedList.insert('first');
+    linkedList.insert('second');
+    linkedList.insert('third');
+
+    let kthElement = linkedList.kthFromEnd(-1);
+    expect(kthElement).toBe('k cannot be negative');
+  });
+
+  test('Where the linked list is of a size 1', () => {
+    let linkedList = new LinkedList();
+    linkedList.insert('first');
+
+    let kthElement = linkedList.kthFromEnd(0);
+    expect(kthElement).toBe('first');
+  });
+
+  test('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    let linkedList = new LinkedList();
+    linkedList.insert('first');
+    linkedList.insert('second');
+    linkedList.insert('third');
+    linkedList.insert('fourth');
+    linkedList.insert('fifth');
+
+    let kthElement = linkedList.kthFromEnd(2);
+    expect(kthElement).toBe('third');
+    expect().toBe();
+  });
+
 });
