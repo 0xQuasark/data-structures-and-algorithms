@@ -8,3 +8,4 @@ Challenge Readme                                                                
 [Challenge 04 README](challenge04/README.md)                                                      |                 
 [Challenge 06 README](challenge06/README.md)                                                      |                 
 [Challenge 07](challenge07/README.md)                                                      |                 
+[Challenge 08](challenge08/README.md)                                                      |                 
