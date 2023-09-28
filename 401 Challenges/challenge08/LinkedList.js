@@ -15,15 +15,6 @@ class LinkedList {
     this.head = null;
   }
 
-  traversal(list) {
-    let current = list.head; // this must of Type Node OR Null.
-  
-    while (current) {
-      // console.log('CURRENT NODE VALUE:', current.value);
-      current = current.next;
-    }
-  }
-
   // adding a value to the end of the linked list.
   append(value) {
     let newNode = new Node(value);
@@ -149,6 +140,15 @@ blowGun.next = sunscreen;
 
 // start at the head and move until now more nodes.
 // Big 0 -> time: O(n), Space: O(1)
+function traversal (list) {
+
+  let current = list.head; // this must of Type Node OR Null.
+
+  while (current) {
+    // console.log('CURRENT NODE VALUE:', current.value);
+    current = current.next;
+  }
+}
 
 // survivalRope.append('paddle');
 // survivalRope.insert('chicken');
