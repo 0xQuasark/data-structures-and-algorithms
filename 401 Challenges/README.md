@@ -1,11 +1,7 @@
-
-
-Challenge Readme                                                                  |
+Data Structures                                                                  |
 --------------------------------------------------------------------------------- |
-[Challenge 01 README](challenge01/README.md)                                   |
-[Challenge 02 README](challenge02/README.md)                                                      |                 
-[Challenge 03 README](challenge03/README.md)                                                      |                 
-[Challenge 04 README](challenge04/README.md)                                                      |                 
-[Challenge 06 README](challenge06/README.md)                                                      |                 
-[Challenge 07](challenge07/README.md)                                                      |                 
-[Challenge 08](challenge08/README.md)                                                      |                 
+[Linked Lists](<01. LinkedList/README.md>)                                   |
+[Stacks and Queues][](<02. Stacks and Queues/README.md>)                                   |
+[]()                                                      |                 
+[]()                                                      |                 
+
