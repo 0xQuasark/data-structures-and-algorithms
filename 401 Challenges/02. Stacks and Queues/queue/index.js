@@ -37,7 +37,7 @@ class Queue {
     }
     return this.front.value;
   }
-  
+
   isEmpty() {
     return this.front === null;
   }
