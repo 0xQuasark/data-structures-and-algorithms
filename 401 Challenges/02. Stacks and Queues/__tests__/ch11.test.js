@@ -1,6 +1,6 @@
 'use strict';
 
-const PseudoQueue = require('../02. Stacks and Queues/ch11')
+const PseudoQueue = require('../ch11');
 
 describe('HAPPY CASE', () => {
   it('should return in order', () => {
