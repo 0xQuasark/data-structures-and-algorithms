@@ -1,6 +1,6 @@
 # Singly Linked Lists
 
-Working with the Linked List data type
+toString setup
 
 ## Whiteboard Process
 - in class with Jacob 
@@ -19,4 +19,4 @@ Working with the Linked List data type
 | toString() | O(n) | O(n) |
 
 ## Solution
-- Code is to be found [here](linkedList.test.js)
+- Code is to be found [here](./LinkedList.js)

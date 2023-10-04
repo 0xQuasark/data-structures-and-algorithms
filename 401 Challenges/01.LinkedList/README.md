@@ -7,5 +7,5 @@ Challenge Readme                               |                                
 [Challenge 03 README](challenge03/README.md)   | Binary search in a sorted 1D array |             
 [Challenge 04 README](challenge04/README.md)   | Paired up exercise|            
 [Challenge 06 README](challenge06/README.md)   | toString()|           
-[Challenge 07](challenge07/README.md)          | zipLists |          
-[Challenge 08](challenge08/README.md)          | Working with the Linked List data type  |
+[Challenge 07](challenge07/README.md)          | kth from end |          
+[Challenge 08](challenge08/README.md)          | ziplists  |
