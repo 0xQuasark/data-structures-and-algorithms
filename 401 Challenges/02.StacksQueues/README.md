@@ -15,6 +15,9 @@ Implement the following methods:
     - `pref` can be either `dog` or `cat`
   - Return: either a dog or a cat, based on preference.
     - If pref is not `dog` or `cat` then return null.
+- [Whiteboard Code](https://projects.invisionapp.com/freehand/document/RtOUunpHB)
+- [Code](./ch12.js)
+- [Test](./__tests__/ch12.test.js)
 
 
 
@@ -23,9 +26,9 @@ Create a new class called pseudo queue.
 - Do not use an existing Queue.
 - Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below),
 - Internally, utilize 2 Stack instances to create and manage the queue
-  - [Whiteboard Code](https://projects.invisionapp.com/freehand/document/RtOUunpHB)
-  - [Code](ch11.js)
-  - [Test](ch11.test.js)
+- [Whiteboard Code](https://projects.invisionapp.com/freehand/document/RtOUunpHB)
+- [Code](./ch11.js)
+- [Test](./__tests__/ch11.test.js)
 
 ## First
 - implement basic functionality and tests
