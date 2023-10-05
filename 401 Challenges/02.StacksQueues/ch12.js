@@ -2,12 +2,12 @@
 
 const Queue = require('./queue');
 
-class Animal {
-  constructor(name, species) {
-    this.name = name;
-    this.species = species;
-  }
-}
+// class Animal {
+//   constructor(name, species) {
+//     this.name = name;
+//     this.species = species;
+//   }
+// }
 
 class AnimalShelter {
   constructor() {
@@ -62,7 +62,6 @@ class AnimalShelter {
     if (haveFound) {
       this.queue.dequeue();
     }
-    
   }
 
 }

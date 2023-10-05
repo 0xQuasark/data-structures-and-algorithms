@@ -1,5 +1,15 @@
 # Challenges for Stacks and Queues
 
+## Bracket Validator
+Write a function called validate brackets
+- Arguments: string
+- Return: boolean
+- representing whether or not the brackets in the string are balanced
+- [Whiteboard Code](https://projects.invisionapp.com/freehand/document/RtOUunpHB)
+- [Code](./ch13.js)
+- [Test](./__tests__/ch13.test.js)
+
+
 
 ## Third
 Create a class called AnimalShelter which holds only dogs and cats.
