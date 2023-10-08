@@ -1,6 +1,8 @@
 # Trees Challenges
 
 ## First 
+
+### Problem Domain
 Create a Binary Search Tree class
 - This class should be a sub-class (or your languages equivalent) of the Binary Tree Class, with the following additional methods:
   - Add
@@ -11,3 +13,7 @@ Create a Binary Search Tree class
   - Argument: value
   - Returns: boolean indicating whether or not the value is in the tree at least once.
 
+### Assignment
+- [Whiteboard](https://projects.invisionapp.com/freehand/document/miqIvWwab)
+- ([Code](Trees.js))
+- ([Tests](trees.test.js))
