@@ -1,6 +1,6 @@
 # Singly Linked Lists
 
-toString setup
+Working with the Linked List data type
 
 ## Whiteboard Process
 - in class with Jacob 

@@ -1,5 +1,3 @@
-
-
 Challenge Readme                               |                                         |
 -----------------------------------------------|---------------------------------------- |
 [Challenge 01 README](challenge01/README.md)   | Reverse an array such that the contents at the end is now at the beginning and vice versa. |
