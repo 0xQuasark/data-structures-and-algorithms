@@ -58,4 +58,25 @@ describe('Testing the BinaryTree class', () => {
     expect(tree.contains('non-existing')).toBe(false);
   });
 
+  test('finds max in a non-empty tree', () => {
+    let tree = new BinarySearchTree();
+    tree.add(10);
+    tree.add(20);
+    tree.add(30);
+    expect(tree.findMax()).toBe(30);
+  });
+
+  test('returns null for an empty tree', () => {
+    let tree = new BinarySearchTree();
+    expect(tree.findMax()).toBeNull();
+  });
+
+  test('finds max when all values are the same', () => {
+    let tree = new BinarySearchTree();
+    tree.add(10);
+    tree.add(10);
+    tree.add(10);
+    expect(tree.findMax()).toBe(10);
+  });
+
 });
