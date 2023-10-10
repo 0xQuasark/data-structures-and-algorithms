@@ -15,6 +15,10 @@
 - This was done on the whiteboard by Jacob during the intro session so I already had the logic and code
 - reconstructing the function, and adding tests have been valuable, especially the skewedTree
 
+#### Big O for BFS
+- time: 'O(n)'
+- storage: 'O(n)'
+
 
 ## Second Challenge
 ### Problem Domain
@@ -24,6 +28,9 @@ Find the Maximum Value in a Binary Tree
 - I took the same function for the inOrder, but instead of adding the values to an array, I just got a temp max value variable and returned that.
 - No whiteboard was done, as it was an iteration of a prior function
 
+#### Big O for findMax
+- time: 'O(n)'
+- storage: 'O(1)'
 
 ## First Challenge
 ### Problem Domain
@@ -41,3 +48,8 @@ Create a Binary Search Tree class
 - [Whiteboard](https://projects.invisionapp.com/freehand/document/miqIvWwab)
 - ([Code](Trees.js))
 - ([Tests](trees.test.js))
+
+
+#### Big O for contains
+- time: 'O(n)'
+- storage: 'O(1)'
