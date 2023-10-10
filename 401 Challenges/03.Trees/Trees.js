@@ -86,7 +86,10 @@ class BinaryTree {
   // breadth first traversal
   bfs() {
     let root = this.root;
-
+    if (!root) {
+      return null;
+    }
+    
     let queue = [];
     let order = [];
     queue.push(root);
@@ -112,7 +115,7 @@ class BinaryTree {
     if (this.root === null) {
       return null;
     }
-    
+
     const traverse = (current) => {
       if (current.left) {
         traverse(current.left);
@@ -195,17 +198,22 @@ class BinarySearchTree extends BinaryTree {
 }
 
 
-module.exports = { BinaryTree, BinarySearchTree };
+module.exports = { BinaryTree, BinarySearchTree, Node };
 
 let tree = new BinaryTree();
 
-let node1 = new Node(1);
-let node2 = new Node(2);
-let node3 = new Node(3);
-let node4 = new Node(4);
-let node5 = new Node(5);
-let node6 = new Node(6);
-let node7 = new Node(7);
+let node1 = new Node(2);
+let node2 = new Node(7);
+let node3 = new Node(5);
+let node4 = new Node(2);
+let node5 = new Node(6);
+let node6 = new Node(5);
+let node7 = new Node(11);
+let node8 = new Node(9);
+let node9 = new Node(4);
+
+// [2,7,5,2,6,9,5,11,4]
+
 
 tree.root = node1;
 
@@ -215,13 +223,16 @@ node2.left = node4;
 node2.right = node5;
 node5.left = node6;
 node5.right = node7;
+node3.right = node8;
+node8.left = node9;
 
 // console.log(tree.root);
 
 // let preOrder = tree.preOrder();
-// let breadthFirst = tree.bfs();
+let breadthFirst = tree.bfs();
+console.log(breadthFirst);
 // console.log(preOrder);
-console.log(tree.findMax());
+// console.log(tree.findMax());
 
 
 
