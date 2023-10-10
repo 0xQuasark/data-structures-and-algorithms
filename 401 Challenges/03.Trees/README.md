@@ -5,6 +5,17 @@
 - ([Tests](trees.test.js))
 
 
+## Third Challenge
+### Problem Domain
+- Write a function called breadth first
+- Arguments: tree
+- Return: list of all values in the tree, in the order they were encountered
+
+### Assignment
+- This was done on the whiteboard by Jacob during the intro session so I already had the logic and code
+- reconstructing the function, and adding tests have been valuable, especially the skewedTree
+
+
 ## Second Challenge
 ### Problem Domain
 Find the Maximum Value in a Binary Tree
