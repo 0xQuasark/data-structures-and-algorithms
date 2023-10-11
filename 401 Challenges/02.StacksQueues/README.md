@@ -41,4 +41,33 @@ Create a new class called pseudo queue.
 - [Test](./__tests__/ch11.test.js)
 
 ## First
-- implement basic functionality and tests
+<!-- Description of the challenge -->
+- Create a Queue class that has a front property. It creates an empty Queue when instantiated.
+- This object should be aware of a default empty value assigned to front when the queue is created.
+- The class should contain the following methods:
+  - enqueue
+    - Arguments: value
+    - adds a new node with that value to the back of the queue with an O(1) Time performance.
+  - dequeue
+    - Arguments: none
+    - Returns: the value from node from the front of the queue
+    - Removes the node from the front of the queue
+    - Should raise exception when called on empty queue
+  - peek
+    - Arguments: none
+    - Returns: Value of the node located at the front of the queue
+    - Should raise exception when called on empty stack
+  - is empty
+    - Arguments: none
+    - Returns: Boolean indicating whether or not the queue is empty
+
+## Whiteboard Process
+- this was presented by JB during the class
+
+## Approach & Efficiency
+Time Complexity: `O(1)`
+Space Complexity: `O(n)`
+
+## Solution
+- [Stack Code](./stack/index.js), [Stack Test](./stack/__tests__/stack.test.js)
+- [Queue Code](./queue/index.js), [Queue Test](./queue/__tests__/queue.test.js)
