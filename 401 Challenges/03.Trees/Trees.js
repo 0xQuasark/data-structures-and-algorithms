@@ -133,6 +133,11 @@ class BinaryTree {
     return maxNum;
   }
 
+  fizzBuzzTree() {
+    
+  }
+
+
 }
 
 // Binary Search Tree is everything a Binary Tree plus other things.
@@ -202,35 +207,37 @@ module.exports = { BinaryTree, BinarySearchTree, Node };
 
 let tree = new BinaryTree();
 
-let node1 = new Node(2);
-let node2 = new Node(7);
+let node1 = new Node(3);
+let node2 = new Node(20);
 let node3 = new Node(5);
-let node4 = new Node(2);
-let node5 = new Node(6);
-let node6 = new Node(5);
-let node7 = new Node(11);
-let node8 = new Node(9);
-let node9 = new Node(4);
+let node4 = new Node(4);
+let node5 = new Node(15);
+let node6 = new Node(2);
+let node7 = new Node(1);
+let node8 = new Node(6);
+let node9 = new Node(8);
+let node10 = new Node(21);
 
 // [2,7,5,2,6,9,5,11,4]
 
 
 tree.root = node1;
 
-node1.left = node2;
-node1.right = node3;
-node2.left = node4;
-node2.right = node5;
-node5.left = node6;
-node5.right = node7;
-node3.right = node8;
-node8.left = node9;
+node1.left = node2; // 20
+node1.right = node3;  // 5
+node2.left = node4 //'4'
+node2.right = node5 // '15'
+node4.left = node6 // '2'
+node5.left = node7 // 1
+node3.left = node8; // 6
+node3.right = node9; // 8
+node9.right = node10; // 21
 
 // console.log(tree.root);
 
 // let preOrder = tree.preOrder();
-let breadthFirst = tree.bfs();
-console.log(breadthFirst);
+// let breadthFirst = tree.bfs();
+// console.log(breadthFirst);
 // console.log(preOrder);
 // console.log(tree.findMax());
 
