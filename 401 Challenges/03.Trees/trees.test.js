@@ -1,4 +1,4 @@
-const { BinaryTree, BinarySearchTree, Node } = require('./Trees'); // Adjust the path according to your file structure
+const { BinaryTree, BinarySearchTree, Node, KaryTree, KaryNode } = require('./Trees'); // Adjust the path according to your file structure
 
 describe('Testing the BinaryTree class', () => {
 
@@ -122,5 +122,24 @@ describe('Testing Challenge 17', () => {
     skewedTree.root.right = new Node(2);
     skewedTree.root.right.right = new Node(3);
     expect(skewedTree.bfs()).toEqual([1, 2, 3]);
+  });
+
+  describe('Testing the KaryTree class', () => {
+
+    test('createFizzBuzz should correctly transform a KaryTree', () => {
+      const myTree = new KaryTree(3);
+      myTree.root = new KaryNode(15);
+      myTree.root.children.push(new KaryNode(3));
+      myTree.root.children.push(new KaryNode(5));
+      myTree.root.children.push(new KaryNode(16));
+  
+      const newTree = myTree.createFizzBuzz(myTree);
+  
+      expect(newTree.root.value).toBe('FizzBuzz');
+      expect(newTree.root.children[0].value).toBe('Fizz');
+      expect(newTree.root.children[1].value).toBe('Buzz');
+      expect(newTree.root.children[2].value).toBe('16');
+    });
+  
   });
 });

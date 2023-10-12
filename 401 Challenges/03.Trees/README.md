@@ -18,6 +18,13 @@ Determine whether or not the value of each node is divisible by 3, 5 or both. Cr
 
 ### Assignment
 - [Whiteboard](https://projects.invisionapp.com/freehand/document/RtOUunpHB)
+- ([Code](Trees.js))
+- ([Tests](trees.test.js))
+
+#### Big O for contains
+- time: 'O(n)'
+- storage: 'O(n)'
+
 
 
 ## Third Challenge
@@ -65,6 +72,4 @@ Create a Binary Search Tree class
 - ([Tests](trees.test.js))
 
 
-#### Big O for contains
-- time: 'O(n)'
-- storage: 'O(1)'
+
