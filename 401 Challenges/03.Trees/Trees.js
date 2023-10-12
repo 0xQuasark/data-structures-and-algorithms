@@ -10,15 +10,9 @@ class Node {
 
 // STRETCH GOAL
 class KaryNode {
-  constructor(k, value) {
+  constructor(value) {
     this.value = value;
-    this.children = new Array(k);
-  }
-}
-class KaryTree {
-  constructor(k) {
-    this.k = k;
-    this.root = null;
+    this.children = []; // an array to hold child nodes
   }
 }
 
@@ -133,12 +127,64 @@ class BinaryTree {
     return maxNum;
   }
 
-  fizzBuzzTree() {
-    
-  }
-
 
 }
+
+class KaryTree {
+  constructor(value) {
+    this.value = value;
+    this.root = null;
+  }
+  add(value) {
+    let newNode = new KaryNode(this.k, value);
+    if (!this.root) {
+      this.root = newNode;
+    } else {
+      let current = this.root;
+      while (current) {
+        for (let i = 0; i < current.children.length; i++) {
+          if (!current.children[i]) {
+            current.children[i] = newNode;
+            return;
+          }
+        }
+        current = current.children[0];
+      }
+    }
+  }
+
+  createFizzBuzz(tree) {
+    function fizzBuzz(value) {
+      if (value % 3 === 0 && value % 5 === 0) return 'FizzBuzz';
+      if (value % 3 === 0) return 'Fizz';
+      if (value % 5 === 0) return 'Buzz';
+      return String(value);
+    }
+  
+    function traverse(currentNode, newCurrentNode) {
+      if (!currentNode) return;
+    
+      // Perform fizzBuzz operation on the current node value
+      newCurrentNode.value = fizzBuzz(currentNode.value);
+    
+      // Loop through each child
+      for (let i = 0; i < currentNode.children.length; i++) {
+        const childNode = currentNode.children[i];
+        const newChildNode = new KaryNode(fizzBuzz(childNode.value)); // create a new node for newTree
+        newCurrentNode.children.push(newChildNode); // add it to the children of the newCurrentNode
+        traverse(childNode, newChildNode); // Recursively perform traverse traversal
+      }
+    }
+  
+    let newTree = new KaryTree(tree.k);
+    newTree.root = new KaryNode(fizzBuzz(tree.root.value)); // create a new root for newTree with the fizzBuzz value
+    traverse(tree.root, newTree.root); // Start preOrder traversal from root
+    
+    return newTree;
+  }
+
+}
+
 
 // Binary Search Tree is everything a Binary Tree plus other things.
 class BinarySearchTree extends BinaryTree {
@@ -203,7 +249,7 @@ class BinarySearchTree extends BinaryTree {
 }
 
 
-module.exports = { BinaryTree, BinarySearchTree, Node };
+module.exports = { BinaryTree, BinarySearchTree, Node, KaryTree, KaryNode };
 
 let tree = new BinaryTree();
 
@@ -242,4 +288,26 @@ node9.right = node10; // 21
 // console.log(tree.findMax());
 
 
+const myTree = new KaryTree(3);
+myTree.root = new KaryNode(15);
+myTree.root.children.push(new KaryNode(3));
+myTree.root.children.push(new KaryNode(5));
+myTree.root.children.push(new KaryNode(16));
 
+// Add more nodes to the first child
+myTree.root.children[0].children.push(new KaryNode(7));
+myTree.root.children[0].children.push(new KaryNode(8));
+myTree.root.children[0].children.push(new KaryNode(9));
+
+// Add more nodes to the second child
+myTree.root.children[1].children.push(new KaryNode(10));
+myTree.root.children[1].children.push(new KaryNode(11));
+myTree.root.children[1].children.push(new KaryNode(12));
+
+// Add more nodes to the third child
+myTree.root.children[2].children.push(new KaryNode(13));
+myTree.root.children[2].children.push(new KaryNode(14));
+myTree.root.children[2].children.push(new KaryNode(15));
+
+const newTree = myTree.createFizzBuzz(myTree);
+console.log(JSON.stringify(newTree, null, 2));
