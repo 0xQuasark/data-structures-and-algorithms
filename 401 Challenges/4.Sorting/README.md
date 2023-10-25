@@ -1,5 +1,9 @@
 # Sorting Exercises
 
+## Challenge 28
+- [Code](./stringSorting/sort.js)
+- [Tests](./stringSorting/sort.test.js)
+
 ## Challenge 27
 - [Article](mergeSort/README.md)
 - [Code](./mergeSort/mergeSort.js)
