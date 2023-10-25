@@ -1,3 +1,5 @@
+'use strict';
+
 function mergeSort(arr) {
 
   let arrayLength = arr.length;
@@ -43,7 +45,6 @@ function merge(left, right, arr) {
   }
 
 }
-
 
 let sampleArray = [8,4,23,42,16,15];
 console.log(mergeSort(sampleArray))
