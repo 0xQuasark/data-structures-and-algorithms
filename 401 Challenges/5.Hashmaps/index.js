@@ -63,6 +63,22 @@ class HashTable {
     }
     return arr;
   }
+
+  repeatedWord(string) {
+    const hashTable = new HashTable(1024);
+    const words = string.split(' ');
+  
+    for (let word of words) {
+      if (hashTable.has(word)) {
+        return word;
+      } else {
+        // just adding a placeholder value so that the next time that this is called it returns the word
+        hashTable.set(word, 1);
+      }
+    }
+    return null;
+  }
+
 }
 
 const table = new HashTable(1024);
