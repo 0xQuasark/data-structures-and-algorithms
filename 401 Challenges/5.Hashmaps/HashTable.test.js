@@ -1,6 +1,26 @@
 const HashTable = require('./index.js');
 
-describe('Hash Table class', () => {
+describe('Challenge 31: Repeated Words', () => {
+  let hashTable;
+
+  beforeEach(() => {
+    hashTable = new HashTable(1024);
+  });
+
+  test('Returns the first repeated word in a string', () => {
+    const str = 'apple banana apple grape';
+    expect(hashTable.repeatedWord(str)).toEqual('apple');
+  });
+
+  test('Returns null if no word is repeated', () => {
+    const str = 'apple banana grape';
+    expect(hashTable.repeatedWord(str)).toBeNull();
+  });
+
+})
+
+
+describe('Initial Hashmap Challenge 30', () => {
   let hashTable;
 
   beforeEach(() => {
