@@ -1,5 +1,34 @@
 # Hashmaps
 
+## Challenge 33
+
+Implement a simplified LEFT JOIN for 2 Hashmaps.
+- Arguments: two hash maps
+- The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+- The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+- Return: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic
+
+Synonyms Hash Table |   |   | Antonyms Hash Table |   |
+---------------------|---|---|---------------------|---|
+Key                 | Value | xx  | Key               | Value |
+diligent            | employed | xx  | diligent         | idle |
+fond                | enamored | xx  | fond             | averse |
+guide               | usher | xx  | guide             | follow |
+outfit              | garb | xx  | flow              | jam |
+wrath               | anger | xx  | wrath             | delight |
+
+Output:
+```javascript
+[
+   ["font", "enamored", "averse"],
+   ["wrath", "anger", "delight"],
+   ["diligent", "employed", "idle"],
+   ["outfit", "garb", NULL],
+   ["guide", "usher","follow"]
+]
+```
+
+
 ## Challenge 32
 Find common values in 2 binary trees
 - Time Complexity: O(n + m), where n and m are the number of nodes in tree1 and tree2 respectively. This is because the function iterates over each node in both trees once when populating and checking the hash table.

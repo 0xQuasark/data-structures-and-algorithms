@@ -1,9 +1,40 @@
 const HashTable = require('./index.js');
 const { BinaryTree, Node } = require('../03.Trees/Trees.js');
 const treeIntersection = require('./challenge32.js');
+const leftJoinHashMap = require('./challenge33.js');
+
+describe('Challenge 33: Left Join of 2 Hashmaps', () => {
+  test('Find common values in 2 binary trees', () => {
+    let leftHash = new HashTable(1024);
+    let rightHash = new HashTable(1024);
+
+    leftHash.set('diligent', 'employed');
+    leftHash.set('fond', 'enamored');
+    leftHash.set('guide', 'usher');
+    leftHash.set('outfit', 'garb');
+    leftHash.set('wrath', 'anger');
+    
+
+    rightHash.set('diligent', 'idle');
+    rightHash.set('fond', 'averse');
+    rightHash.set('guide', 'follow');
+    rightHash.set('flow', 'jam');
+    rightHash.set('wrath', 'delight');
+
+    const result = leftJoinHashMap(leftHash, rightHash);
+    expect(result).toEqual([      
+      [ 'fond', 'enamored', 'averse' ],
+      [ 'guide', 'usher', 'follow' ],
+      [ 'wrath', 'anger', 'delight' ],
+      [ 'diligent', 'employed', 'idle' ],
+      [ 'outfit', 'garb', null ]
+    ]);
+  });
+
+})
+
 
 describe('Challenge 32: Tree Intersection', () => {
-  
   test('Find common values in 2 binary trees', () => {
     let hashTable = new HashTable(1024);
     let tree1 = new BinaryTree();

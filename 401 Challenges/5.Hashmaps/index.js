@@ -36,7 +36,7 @@ class HashTable {
     let hash = this.hash(key); // 0(1)
     let list = this.buckets[hash]; // 0(1)
     if (!list) {
-      console.log('NO VALUES PRESENT FOR GIVEN KEY');
+      // console.log('NO VALUES PRESENT FOR GIVEN KEY');
       return;
     } else {
       // console.log('here', list.values());
