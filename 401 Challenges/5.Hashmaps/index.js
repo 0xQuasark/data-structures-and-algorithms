@@ -64,6 +64,7 @@ class HashTable {
     return arr;
   }
 
+
   repeatedWord(string) {
     const hashTable = new HashTable(1024);
     const words = string.split(' ');
@@ -84,14 +85,14 @@ class HashTable {
 const table = new HashTable(1024);
 
 // let position = table.hash('medicine');
-table.set('medicine', 'pills');
-table.set('medicine', 'bandages');
-table.set('key1', 'value1');
-table.get('key1')
+// table.set('medicine', 'pills');
+// table.set('medicine', 'bandages');
+// table.set('key1', 'value1');
+// table.get('key1')
 // console.log(JSON.stringify(table));
 // let medicineStuff = table.get('medicine');
 // console.log(medicineStuff);
 
-console.log(table.keys());
+// console.log(table.keys());
 
 module.exports = HashTable;

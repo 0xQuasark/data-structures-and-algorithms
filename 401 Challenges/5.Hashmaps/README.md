@@ -1,5 +1,10 @@
 # Hashmaps
 
+## Challenge 32
+Find common values in 2 binary trees
+- Time Complexity: O(n + m), where n and m are the number of nodes in tree1 and tree2 respectively. This is because the function iterates over each node in both trees once when populating and checking the hash table.
+- Space Complexity: O(n), where n is the number of nodes in tree1. This is because in the worst-case scenario (when there are no common nodes), each node from tree1 gets stored in the hash table.
+
 ## Challenge 31
 Write a function called repeated word that finds the first word to occur more than once in a string
 - Time complexity: O(n) because the function iterates over every word in the string
