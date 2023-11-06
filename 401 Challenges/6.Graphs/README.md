@@ -3,6 +3,12 @@
 - [Code](./index.js)
 - [Tests](./graph.test.js)
 
+## Challenge 36
+Write the following method for the Graph class:
+- breadth first
+  - Arguments: Node
+  - Return: A collection of nodes in the order they were visited.
+
 
 ## Challenge 35
 Create methods and tests for the following methods of the Graph class:
