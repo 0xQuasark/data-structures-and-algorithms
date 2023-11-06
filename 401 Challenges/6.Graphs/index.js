@@ -47,6 +47,31 @@ class Graph {
     // this.adjacencyList.keys();
   }
 
+  bfs(vertex) {
+    let queue = [];
+    let visited = new Set();
+    queue.push(vertex);
+    visited.add(vertex);
+
+    // as long as our queue has vertices, we want to keep looping
+    while(queue.length) {
+      let current = queue.shift(); // dequeue the front vertex
+      // console.log(current.value);
+      let edges = this.getEdges(current); // grab all the edge (connections)
+
+      for (let edge of edges) { // loop through ever edge that is connected to the current vertex
+        let childVertex = edge.vertex; // and edge contains a vertex
+
+        if (!visited.has(childVertex)) { // check if vertex has already been visited.
+          visited.add(childVertex);
+          queue.push(childVertex);
+        }
+      }
+    }
+    // console.log(visited);
+    return visited;
+  }
+
   dfs(vertex) {
     let stack = [vertex];
     let visited = new Set();
