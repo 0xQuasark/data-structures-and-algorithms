@@ -1,5 +1,44 @@
 'use strict';
-const Graph = require('./');
+const { Graph, businessTrip } = require('./index.js');
+
+describe('Challenge 37, Business Trip', () => {
+  let graph;
+  beforeEach(() => {
+    graph = new Graph();
+    let pandora = graph.addVertex('Pandora');
+    let arendelle = graph.addVertex('Arendelle');
+    let metroville = graph.addVertex('Metroville');
+    let monstropolis = graph.addVertex('Monstropolis');
+    let narnia = graph.addVertex('Narnia');
+    let naboo = graph.addVertex('Naboo');
+    graph.addEdge(pandora, arendelle, 150);
+    graph.addEdge(arendelle, metroville, 99);
+    graph.addEdge(metroville, arendelle, 99);
+    graph.addEdge(metroville, naboo, 26);
+    graph.addEdge(metroville, narnia, 37);
+    graph.addEdge(metroville, monstropolis, 105);
+    graph.addEdge(monstropolis, metroville, 105);
+    graph.addEdge(monstropolis, naboo, 73);
+    graph.addEdge(naboo, monstropolis, 73);
+    graph.addEdge(naboo, narnia, 250);
+    graph.addEdge(narnia, naboo, 250);
+  });
+
+  test('should calculate the correct cost of a trip', () => {
+    expect(businessTrip(graph, ['Pandora', 'Arendelle'])).toBe(150);
+    expect(businessTrip(graph, ['Arendelle', 'Metroville', 'Monstropolis'])).toBe(204);
+  });
+
+  test('should return null for a trip with no direct flights', () => {
+    expect(businessTrip(graph, ['Narnia', 'Arendelle', 'Naboo'])).toBeNull();
+  });
+
+  test('should return null if one of the cities does not exist', () => {
+    expect(businessTrip(graph, ['Narnia', 'Pandora', 'Hogwarts'])).toBeNull();
+  });
+
+});
+
 
 describe('Challenge 36, Bredth Firsth Search', () => {
   test('BFS traversal returns correct order of visited vertices', () => {
