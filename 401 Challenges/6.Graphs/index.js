@@ -95,6 +95,45 @@ class Graph {
   }
 }
 
+
+// businessTrip function implementation
+function businessTrip(graph, cityNames) {
+  let totalCost = 0;
+  for (let i = 0; i < cityNames.length - 1; i++) {
+    let startCity = cityNames[i];
+    let endCity = cityNames[i + 1];
+
+    // Initialize startVertex and endVertex
+    let startVertex;
+    let endVertex;
+    // Loop through all vertices in the graph's adjacency list
+    for (let vertex of graph.adjacencyList.keys()) {
+      // If the vertex's value matches the start city, assign it to startVertex
+      if (vertex.value === startCity) {
+        startVertex = vertex;
+      }
+      // If the vertex's value matches the end city, assign it to endVertex
+      if (vertex.value === endCity) {
+        endVertex = vertex;
+      }
+    }
+
+    if (!startVertex || !endVertex) {
+      return null; // One of the cities in the trip is not in the graph.
+    }
+
+    let edge = graph.adjacencyList.get(startVertex).find(e => e.vertex.value === endCity);
+
+    if (!edge) {
+      return null; // There is no direct flight/edge between these two cities.
+    }
+
+    totalCost += edge.weight;
+  }
+  return totalCost;
+}
+
+
 let network = new Graph();
 
 let Blake = network.addVertex('blake');
@@ -120,4 +159,5 @@ network.addEdge(David, Chester);
 // console.log(network.dfs(Samaad));
 // console.log(network.size());
 // console.log(network);
-module.exports = Graph;
+
+module.exports = { Graph, businessTrip };
