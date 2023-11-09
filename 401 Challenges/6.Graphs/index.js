@@ -72,6 +72,27 @@ class Graph {
     return visited;
   }
 
+  depthFirstSearch(vertex) {
+    let stack = [vertex];
+    let visited = new Set(); // Set is a collection of unique values (collision proof)
+    visited.add(vertex);
+
+    while(stack.length) {
+      let current = stack.pop();
+      let edges = this.getEdges(current);
+
+      for (let edge of edges) {
+        let childVertex = edge.vertex;
+
+        if (!visited.has(childVertex)) {
+          visited.add(childVertex);
+          stack.push(childVertex);
+        }
+      }
+    }
+    return visited;
+  }
+
   dfs(vertex) {
     let stack = [vertex];
     let visited = new Set();
@@ -94,8 +115,6 @@ class Graph {
     return visited;
   }
 }
-
-
 // businessTrip function implementation
 function businessTrip(graph, cityNames) {
   let totalCost = 0;

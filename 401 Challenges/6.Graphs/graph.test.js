@@ -1,6 +1,46 @@
 'use strict';
 const { Graph, businessTrip } = require('./index.js');
 
+describe('Challenge 38, dfs traversal tests', () => {
+
+  test('DFS traversal returns correct order of visited vertices', () => {
+    let graph = new Graph();
+    let one = graph.addVertex(1);
+    let two = graph.addVertex(2);
+    let three = graph.addVertex(3);
+    graph.addEdge(one, two);
+    graph.addEdge(one, three);
+
+    // Step 1: Perform Depth-First Search (DFS) starting from vertex 'one'
+    let dfsResult = graph.dfs(one);
+    // Step 2: Convert the DFS result into an array
+    let dfsArray = [...dfsResult];
+    // Step 3: Map the array of vertices to an array of their values
+    let dfsValues = dfsArray.map(v => v.value);
+    // Step 4: Compare the array of vertex values with the expected array [1, 2, 3]
+    expect(dfsValues).toEqual([1, 2, 3]);
+  });
+
+  test('DFS traversal returns empty set for isolated vertex', () => {
+    let graph = new Graph();
+    let one = graph.addVertex(1);
+    expect([...graph.dfs(one)].map(v => v.value)).toEqual([1]); // shorthand of the above
+  });
+
+  test('DFS traversal returns correct order for complex graph', () => {
+    let graph = new Graph();
+    let one = graph.addVertex(1);
+    let two = graph.addVertex(2);
+    let three = graph.addVertex(3);
+    let four = graph.addVertex(4);
+    graph.addEdge(one, two);
+    graph.addEdge(two, three);
+    graph.addEdge(three, four);
+    graph.addEdge(four, one);
+    expect([...graph.dfs(one)].map(v => v.value)).toEqual([1, 2, 3, 4]);
+  });
+});
+
 describe('Challenge 37, Business Trip', () => {
   let graph;
   beforeEach(() => {
