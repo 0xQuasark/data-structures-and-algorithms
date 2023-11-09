@@ -3,6 +3,11 @@
 - [Code](./index.js)
 - [Tests](./graph.test.js)
 
+## Challenge 38
+- depthFirstSearch
+- Jacob went over this in class, I went through it again though to make sure I understood it
+- I did add additional tests.
+
 ## Challenge 37
 - Write a function called business trip
   - Arguments: graph, array of city names
