@@ -7,4 +7,7 @@ Data Structures                                                                 
 [Hashmaps](./5.Hashmaps/README.md)                                              |
 [Graphs](./6.Graphs/README.md)                                              |
 
+Additional Data Structures
+- Transformer head architecture
+
 
